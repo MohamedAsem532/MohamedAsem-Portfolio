@@ -227,3 +227,42 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("#contact-form");
+  const loading = form.querySelector(".loading");
+  const error = form.querySelector(".error-message");
+  const sent = form.querySelector(".sent-message");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault(); // منع التحويل لصفحة تانية
+    loading.style.display = "block";
+    error.style.display = "none";
+    sent.style.display = "none";
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
+      loading.style.display = "none";
+
+      if (response.ok) {
+        sent.style.display = "block";
+        form.reset(); // تفريغ الحقول بعد الإرسال
+      } else {
+        const data = await response.json();
+        error.textContent = data.errors
+          ? data.errors.map((e) => e.message).join(", ")
+          : "Something went wrong. Please try again.";
+        error.style.display = "block";
+      }
+    } catch (err) {
+      loading.style.display = "none";
+      error.textContent = "Network error. Please try again later.";
+      error.style.display = "block";
+    }
+  });
+});
