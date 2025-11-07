@@ -1632,13 +1632,13 @@ section,
 }
 
 .portfolio .portfolio-wrap .portfolio-info .portfolio-links a {
-  color: var(--contrast-color);
+  color: var(--default-color);
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 30%);
+  background-color: var(--background-color);
   border-radius: 50%;
   font-size: 18px;
   transition: 0.3s;
