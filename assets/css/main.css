@@ -1685,14 +1685,14 @@ section,
 }
 .portfolio .portfolio-wrap .portfolio-info .portfolio-techs button {
   color: var(--default-color);
-  width: 75px;
-  height: 40px;
+  width: 65px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--background-color);
   border-radius: 10%;
-  font-size: 18px;
+  font-size: 10px;
   transition: 0.3s;
 }
 
