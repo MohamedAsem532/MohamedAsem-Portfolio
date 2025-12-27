@@ -1681,11 +1681,12 @@ section,
 }
 .portfolio .portfolio-wrap .portfolio-info .portfolio-techs {
   display: flex;
-  gap: 12px;
+  gap: 8px;
+  margin: 5px;
 }
 .portfolio .portfolio-wrap .portfolio-info .portfolio-techs button {
   color: var(--default-color);
-  width: 65px;
+  width: 55px;
   height: 30px;
   display: flex;
   align-items: center;
