@@ -80,14 +80,13 @@
   /**
    * Animation on scroll function and init
    */
-  function aosInit() {
-    AOS.init({
-      duration: 600,
-      easing: "ease-in-out",
-      once: false,
-      mirror: true,
-    });
-  }
+function aosInit() {
+  AOS.init({
+    duration: 600,
+    easing: "ease-in-out",
+    once: true,   // changed: animate every time the element enters the viewport
+  });
+}
   window.addEventListener("load", aosInit);
 
   /**
